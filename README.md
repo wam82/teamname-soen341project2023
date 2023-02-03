@@ -16,7 +16,9 @@
 
 ## Description
 
-The objective of the project is to create a career services platform where students can post and update their porfolio and where employers can post job offers. We are looking to implement four types of users to populate the platform.
+The objective of the project is to create a career services platform where students can post and update their porfolio and where employers can post job offers. The website will extend functionalities of modern career services to allow opportunities for students learning their crafts and to apply them in the real world.
+
+First of all, we are looking to implement four types of users to populate the platform.
 
 | Users      | Descriptions                                                                              |
 |------------|-------------------------------------------------------------------------------------------|
@@ -25,10 +27,14 @@ The objective of the project is to create a career services platform where stude
 | Headhunter | Headhunters will be able to recruit and direct candidate to employers based on profiles.  |
 | Admin      | Admins will have sufficient permissions to alter and manage accounts, postings, and info. |
 
+Each user will have specific roles in the market, ensuring proper dynamics among all four parties. 
+
 ### Technologies used:
 
 * React
 * Node.js
+
+Languages will vary from Javascript and Typescript (as part of React) and others depending on database selection.
 
 ## Planning
 
