@@ -2,17 +2,17 @@
 
 Team Members
 
-William-Alexandre Messier
+William-Alexandre Messier/wam82 - Team Leader
 
-Louka Fortin-Sirianni
+Louka Fortin-Sirianni/arcvelit
 
-Abdullah Amir
+Abdullah Amir/Amir8Abdullah
 
-Kevin Duong
+Kevin Duong/KD54321
 
-Salma Alalwani
+Salma Alalwani/SalmaAl22
 
-Razvan Alexandru Cioban
+Razvan Alexandru Cioban/Razvan-Alexandru 
 
 
 Description of the project
