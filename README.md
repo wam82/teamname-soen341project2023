@@ -22,3 +22,4 @@ The objective of the project is to create a career services platform where stude
 Technologies used:
 
 React
+Node.js
