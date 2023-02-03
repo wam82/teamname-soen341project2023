@@ -1,5 +1,11 @@
 # soen341
 
+
+Objective
+
+create a career services platform
+
+
 Team Members
 
 William-Alexandre Messier/wam82 - Team Leader
