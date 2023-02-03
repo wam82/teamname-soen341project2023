@@ -124,6 +124,7 @@ dist
 
 # vs files
 .vs/
+.vsidx
 
 # yarn v2
 .yarn/cache
