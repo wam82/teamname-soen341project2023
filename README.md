@@ -8,17 +8,17 @@ create a career services platform
 
 ## Team Members
 
-William-Alexandre Messier/wam82 - Team Leader
+* William-Alexandre Messier (Username:wam82 - Team Leader)
 
-Louka Fortin-Sirianni/arcvelit
+* Louka Fortin-Sirianni (Username:arcvelit)
 
-Abdullah Amir/Amir8Abdullah
+* Abdullah Amir (Username:Amir8Abdullah)
 
-Kevin Duong/KD54321
+* Kevin Duong (Username:KD54321)
 
-Salma Alalwani/SalmaAl22
+* Salma Alalwani (Username:SalmaAl22)
 
-Razvan Alexandru Cioban/Razvan-Alexandru 
+* Razvan Alexandru Cioban (Username:Razvan-Alexandru )
 
 
 ## Description of the project
@@ -28,8 +28,8 @@ The objective of the project is to create a career services platform where stude
 
 ## Technologies used:
 
-React
-Node.js
+* React
+* Node.js
 
 Team roles
 
