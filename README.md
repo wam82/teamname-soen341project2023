@@ -31,8 +31,8 @@ The objective of the project is to create a career services platform where stude
 * React
 * Node.js
 
-Team roles
+## Team roles
 
-Backend: Wiliam, Louka, Abdullah
+* Backend: Wiliam, Louka, Abdullah
 
-Frontend: Kevin, Salma, Razvan
+* Frontend: Kevin, Salma, Razvan
