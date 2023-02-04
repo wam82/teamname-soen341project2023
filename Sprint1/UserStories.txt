@@ -1,0 +1,17 @@
+In the context of this project, 4 users will use the platform: employer, student/candidate, headhunter and admin.
+
+##Employer
+
+The employer will be able to create and manage job postings (view issue #10). The employer will also be able to create and modify their profile (issue to be created)
+
+##Student/Candidate
+
+The student/candidate will be able to create and modify their profile, which will include the possibility to upload a resume (view issue #12).
+
+##Headhunter
+
+The headhunter will be able to view all the candidates and direct candidates to employers (issues to be created). The headhunter should also be able to sort by specific skills/requirements.
+
+##Admin
+
+The administrator will be able to manage all accounts of the platform (view issue 14). 
