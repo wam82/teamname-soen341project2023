@@ -49,7 +49,8 @@ Languages will vary from Javascript and Typescript (as part of React) and others
   - [X] Git setup
   - [X] README and Description
   - [X] Create issues
-  - [ ] Extra planning
+  - [X] Extra planning
 - [ ] Sprint 2
+  - [ ] More public issues to come
 - [ ] Sprint 3
 - [ ] Sprint 4
