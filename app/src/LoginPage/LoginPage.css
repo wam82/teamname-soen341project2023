@@ -1,0 +1,102 @@
+/*=================================================GENERAL SETTINGS=================================================*/
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+body {
+  height: 100vh;
+}
+
+/*===================================================STRUCTURE==========================================================*/
+.login-page-container {
+  display: flex;
+  height: calc(100vh - 73px);
+  position: relative;
+}
+
+.login-page-background {
+  background-image: url("https://media.licdn.com/media//AAYQAgSrAAgAAQAAAAAAADCLr3coQt8AQiyj4giyWxfjsg.svg");
+  height: calc(100vh - 73px);
+  width: 50vw;
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  z-index: -1;
+  position: absolute;
+  right: 0;
+}
+
+.login-function-container {
+  margin: auto 100px;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+/*======================================================STYLING============================================================*/
+.login-useless-text {
+  font-size: 3.2rem;
+  font-weight: 100;
+  margin-bottom: 25px;
+  color: #8f5849;
+}
+
+.login-input-boxes {
+  width: 350px;
+  height: 50px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.forgot-password-anchor {
+  margin: 15px 0;
+  color: black;
+}
+
+.main-sign-in-button {
+  background-color: black;
+  border-radius: 40px;
+  border: none;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.main-sign-in-button:hover {
+  background-color: whitesmoke;
+  color: black;
+  border: 2px solid;
+
+}
+
+/*=============================================RESPONSIVENESS ADJUSTMENTS=====================================================*/
+@media screen and (max-width: 950px) {
+  .login-page-background {
+    display: none;
+  }
+  .login-function-container {
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-useless-text {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 703px) {
+  .login-useless-text {
+    font-size: 2rem;
+  }
+  .login-function-container {
+    margin: auto 0;
+  }
+  .login-input-boxes {
+    width: 55vw;
+  }
+}
