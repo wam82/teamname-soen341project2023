@@ -1,9 +1,11 @@
 import React from 'react'
 
 export default function LoginPage() {
+
+ 
   return (
     <div class="login-page-container">
-      <div class="login-function-container">
+      <div class="login-function-container" >
         <h1 class="login-useless-text">Welcome to your<br/>professional community</h1>
         <input class="login-input-boxes" type="text" name="input" placeholder="Email or phone number"/>
         <input class="login-input-boxes"type="password" name="pass" placeholder="Password"/>
@@ -12,6 +14,7 @@ export default function LoginPage() {
       </div>
       <div class="login-page-background">
       </div>
+       
     </div>
   )
 }

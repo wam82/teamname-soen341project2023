@@ -6,11 +6,15 @@ import './Header/Header.css';
 import LoginPage from "./LoginPage/LoginPage";
 import './LoginPage/LoginPage.css'
 
+
+import {Register} from "./Register/Register";
+import './Register/Register.css'
+
 function App() {
   return (
     <>
-      <Header />
-      <LoginPage />
+      <Register />
+      
     </>
   );
 }
