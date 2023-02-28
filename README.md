@@ -40,9 +40,9 @@ Languages will vary from Javascript and Typescript (as part of React) and others
 
 ### Team roles
 
-* Backend: Wiliam, Louka, Abdullah
+* Backend: Razvan, Louka
 
-* Frontend: Kevin, Salma, Razvan
+* Frontend: Kevin, Salma, Wiliam, Abdullah
 
 ### Planning
 - [X] Sprint 1
