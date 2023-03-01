@@ -14,14 +14,14 @@ body {
 /*===================================================STRUCTURE==========================================================*/
 .login-page-container {
   display: flex;
-  height: calc(100vh - 73px);
+  height: calc(100vh - 100px);
   position: relative;
 }
 
 .login-page-background {
-  background-image: url("https://media.licdn.com/media//AAYQAgSrAAgAAQAAAAAAADCLr3coQt8AQiyj4giyWxfjsg.svg");
-  height: calc(100vh - 73px);
-  width: 50vw;
+  background-image: url("https://svgshare.com/i/qjG.svg");
+  height: calc(100vh - 100px);
+  width: 65vw;
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
