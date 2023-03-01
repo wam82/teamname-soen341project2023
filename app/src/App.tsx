@@ -12,7 +12,6 @@ function App() {
     <>
       <Header />
       <LoginPage />
-      <Manage_Profile/>
     </>
   );
 }
