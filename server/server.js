@@ -2,6 +2,7 @@ const supabase = require('@supabase/supabase-js')
 const express = require('express')
 const app = express()
 
+// TODO : add .env file for keys
 const database = supabase.createClient('https://woqpnszxdqmdgcyicfgc.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndvcXBuc3p4ZHFtZGdjeWljZmdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzc2MDI3MzAsImV4cCI6MTk5MzE3ODczMH0.6P8xHjbJ1B3S6fZRyP-p51_CoGK7SRGsJVugwxs2hB4')
 
 async function fetchAllUsers(db)
@@ -17,6 +18,8 @@ async function fetchUsersByField(db, field, value)
     return data
 }
 
+// TODO : ADD INSERT, UPDATE FUNCTIONS
+
 async function run()
 {
 
@@ -25,6 +28,8 @@ async function run()
         const query = req.query
 
         //data = await fetchUsersByField(database, "username", query.username)
+        
+        // TODO : ADD QUERY CONDITIONS 
         if (query["all"])
         {
             res.json({res: await fetchAllUsers(database)})
@@ -37,6 +42,9 @@ async function run()
         } else {
             res.json({res: {}})
         }
+
+        // TODO : add api route for app.get("/api/insert", =>)
+        //        and app.get("/api/update", =>)
 
     })
         
