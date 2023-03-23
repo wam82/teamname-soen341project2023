@@ -73,8 +73,8 @@ async function run()
         var response_in_json = {} 
 
         data = {
-            title: query["title"],
-            employer: query["employer"],
+            title:       query["title"],
+            employer:    query["employer"],
             description: query["description"]
         }
 
@@ -90,6 +90,33 @@ async function run()
         else    { res.json({res: false})}
 
     })
+
+    app.get("/api/user/insert", async (req, res) => {
+
+        const query = req.query
+        var response_in_json = {} 
+
+        data = {
+            first_name: query["first_name"],
+            last_name:  query["last_name"],
+            user_type:  query["user_type"],
+            password:   query["password"],
+            info:       query["info"],
+            email:      query["email"],
+            resume:     query["resume"],
+            username:   query["username"],
+        }
+
+
+        const { error } = await database.from('users').insert(data)
+
+
+        if (error === null)
+                {res.json({res: true})}
+        else    { res.json({res: false})}
+
+    })
+
 
     app.get("/api/post", async (req, res) => {
 
