@@ -32,6 +32,12 @@ async function fetchPostByID(db, id)
     return data
 }
 
+async function fetchAllPost(db)
+{
+    const {data, error} =  await database.from("postings").select("*")
+    return data
+}
+
 // TODO : ADD INSERT, UPDATE FUNCTIONS
 
 async function run()
@@ -39,7 +45,7 @@ async function run()
 
     // GET SECTION
 
-    app.get("/api", async (req, res) => {
+    app.get("/api/user", async (req, res) => {
 
         const query = req.query
         var response_in_json = {} 
@@ -61,6 +67,29 @@ async function run()
 
     })
 
+    app.get("/api/post/insert", async (req, res) => {
+
+        const query = req.query
+        var response_in_json = {} 
+
+        data = {
+            title: query["title"],
+            employer: query["employer"],
+            description: query["description"]
+        }
+
+        console.log("inserting posting")
+        console.log(data)
+
+
+        const { error } = await database.from('postings').insert(data)
+
+
+        if (error === null)
+                {res.json({res: true})}
+        else    { res.json({res: false})}
+
+    })
 
     app.get("/api/post", async (req, res) => {
 
@@ -69,6 +98,9 @@ async function run()
 
         if (query["id"]) {
             response_in_json = { res: await fetchPostByID(database, query["id"])}
+        } else if (query["all"]) 
+        {
+            response_in_json = { res: await fetchAllPost(database)}
         }
 
         res.json(response_in_json)
