@@ -1,5 +1,9 @@
 const supabase = require('@supabase/supabase-js')
+const { response } = require('express')
 const express = require('express')
+const fetch = require('node-fetch')
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
 const app = express()
 
 // TODO : add .env file for keys
@@ -18,38 +22,92 @@ async function fetchUsersByField(db, field, value)
     return data
 }
 
+// insert posting
+// delete posting
+// update posting
+
+async function fetchPostByID(db, id)
+{
+    const {data, error} =  await database.from("postings").select("*").eq("id", id)
+    return data
+}
+
 // TODO : ADD INSERT, UPDATE FUNCTIONS
 
 async function run()
 {
 
-    app.get("/api/select", async (req, res) => {
+    // GET SECTION
+
+    app.get("/api", async (req, res) => {
 
         const query = req.query
-
+        var response_in_json = {} 
         //data = await fetchUsersByField(database, "username", query.username)
         
         // TODO : ADD QUERY CONDITIONS 
         if (query["all"])
         {
-            res.json({res: await fetchAllUsers(database)})
+            response_in_json = {res: await fetchAllUsers(database)}
         } else if (query["username"])
         {
-            res.json({res: await fetchUsersByField(database, "username", query["username"])})
+            response_in_json = {res: await fetchUsersByField(database, "username", query["username"])}
         } else if (query["email"])
         {
-            res.json({res: await fetchUsersByField(database, "email", query["email"])})
-        } else {
-            res.json({res: {}})
+            response_in_json = {res: await fetchUsersByField(database, "email", query["email"])}
         }
 
-        // TODO : add api route for app.get("/api/insert", =>)
-        //        and app.get("/api/update", =>)
+        res.json(response_in_json)
 
     })
+
+
+    app.get("/api/post", async (req, res) => {
+
+        const query = req.query
+        var response_in_json = {}
+
+        if (query["id"]) {
+            response_in_json = { res: await fetchPostByID(database, query["id"])}
+        }
+
+        res.json(response_in_json)
+
+    })
+
+    // POST SECTION
+
+    app.post("/api", async (req, res) =>{
+        const query = req.query
+        res.json(query)
+    })
+        
+        // TODO : add api route for app.get("/api/insert", =>)
+        //        and app.get("/api/update", =>)
+   
+
         
         app.listen(5000, () => {console.log("Console started on port 5000")})
+
+
+
 } 
 
+    
+    // TODO : add api route for app.get("/api/insert", =>)
+    //        and app.get("/api/update", =>)
+
+
+
 run()
+console.log("Sever started")
+
+
+
+function POST(url) 
+{
+    const Http = new XMLHttpRequest()
+    Http.open("POST", url);
+    Http.send();
+}
 
