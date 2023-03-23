@@ -1,13 +1,18 @@
 const supabase = require('@supabase/supabase-js')
 const { response } = require('express')
 const express = require('express')
-const fetch = require('node-fetch')
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-const app = express()
+
+const app = express();
+app.use(bodyParser.json());
+app.use(cors());
 
 // TODO : add .env file for keys
 const database = supabase.createClient('https://woqpnszxdqmdgcyicfgc.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndvcXBuc3p4ZHFtZGdjeWljZmdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzc2MDI3MzAsImV4cCI6MTk5MzE3ODczMH0.6P8xHjbJ1B3S6fZRyP-p51_CoGK7SRGsJVugwxs2hB4')
+
 
 async function fetchAllUsers(db)
 {
@@ -67,55 +72,7 @@ async function run()
 
     })
 
-    app.get("/api/post/insert", async (req, res) => {
 
-        const query = req.query
-        var response_in_json = {} 
-
-        data = {
-            title:       query["title"],
-            employer:    query["employer"],
-            description: query["description"]
-        }
-
-        console.log("inserting posting")
-        console.log(data)
-
-
-        const { error } = await database.from('postings').insert(data)
-
-
-        if (error === null)
-                {res.json({res: true})}
-        else    { res.json({res: false})}
-
-    })
-
-    app.get("/api/user/insert", async (req, res) => {
-
-        const query = req.query
-        var response_in_json = {} 
-
-        data = {
-            first_name: query["first_name"],
-            last_name:  query["last_name"],
-            user_type:  query["user_type"],
-            password:   query["password"],
-            info:       query["info"],
-            email:      query["email"],
-            resume:     query["resume"],
-            username:   query["username"],
-        }
-
-
-        const { error } = await database.from('users').insert(data)
-
-
-        if (error === null)
-                {res.json({res: true})}
-        else    { res.json({res: false})}
-
-    })
 
 
     app.get("/api/post", async (req, res) => {
@@ -144,10 +101,86 @@ async function run()
         // TODO : add api route for app.get("/api/insert", =>)
         //        and app.get("/api/update", =>)
    
+        //TO HANDLE LOGIN
+        app.post('/api/login', async (req, res) => {
 
-        
+            console.log('Request body:', req.body);
+            const { username, password } = req.body;
+            try {
+              const { data: user, error } = await database.from('users').select('id, username, email, password, user_type').or(`email.eq.${username},username.eq.${username}`).single();
+              if (error) {
+                console.error('Supabase connection error:', error);
+                throw error;
+              }
+              if (!user) {
+                throw new Error('User not found');
+              }
+              if (password !== user.password) {
+                throw new Error('Invalid password');
+              }
+              const loggedIn = true;
+              res.status(200).json({ loggedIn, userType: user.user_type });
+            } catch (error) {
+              console.error('Login error: Invalid username or password', error);
+              res.status(400).json({ error: error.message });
+            }
+        });
+
+        app.post("/api/post/insert", async (req, res) => {
+
+            const query = req.query
+            var response_in_json = {} 
+    
+            data = {
+                title:       query["title"],
+                employer:    query["employer"],
+                description: query["description"]
+            }
+    
+            console.log("inserting posting")
+            console.log(data)
+    
+    
+            const { error } = await database.from('postings').insert(data)
+    
+    
+            if (error === null)
+                    {res.json({res: true})}
+            else    { res.json({res: false})}
+    
+        })
+    
+        app.post("/api/user/insert", async (req, res) => {
+    
+            const query = req.query
+            var response_in_json = {} 
+    
+            data = {
+                first_name: query["first_name"],
+                last_name:  query["last_name"],
+                user_type:  query["user_type"],
+                password:   query["password"],
+                info:       query["info"],
+                email:      query["email"],
+                resume:     query["resume"],
+                username:   query["username"],
+                image:      query["image"]
+            }
+    
+    
+            console.log("inserting user")
+            console.log(data)
+    
+            const { error } = await database.from('users').insert(data)
+    
+    
+            if (error === null)
+                    {res.json({res: true})}
+            else    { res.json({res: false})}
+    
+        })
+
         app.listen(5000, () => {console.log("Console started on port 5000")})
-
 
 
 } 
@@ -170,3 +203,4 @@ function POST(url)
     Http.send();
 }
 
+POST("http://localhost:5000/api/login?username=loukafs&password=12345")
