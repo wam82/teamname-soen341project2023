@@ -1,0 +1,194 @@
+/*========================GENERAL SETTINGS==============================================*/
+* {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.2s;
+  }
+  
+  body {
+    height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+  }
+  
+  /*===========================================STRUCTURE============================================*/
+  
+  /*-------------------------Logo-------------------------------------*/
+  .logo {
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+  
+  /*------------------------Main Menu(people and jobs)-----------------*/
+  .mainmenu, .mainmenu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /*-----------------Grouped main menu with singup, login---------------*/
+  .grouped-mainmenu-login {
+    display: flex;
+  }
+  
+  /*-------------------Login and signup---------------------------------*/
+  .nav-login-signup {
+    display: flex;
+    align-items: center;
+  }
+  
+  /*-------------------Responsive menu bar---------------------------------*/
+  .mobile-menu-container {
+    display: none;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  
+  /*===========================================STYLING============================================*/
+  /*-------------------------Logo image--------------------------------*/
+  .logo-image {
+    height: 25px;
+    fill: black;
+    margin-left: 2px;
+  }
+  
+  /*-------------------mainmenu images, texts-------------------------------*/
+  .mainmenu svg {
+    height: 20px;
+    fill: rgba(0, 0, 0, 0.5);
+  }
+  
+  .mainmenu li {
+    list-style: none;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    margin-right: 25px;
+  }
+  
+  .mainmenu a {
+    text-decoration: none;
+    margin: 20px 0;
+    color: black;
+  }
+  
+  .mainmenu li:hover {
+    color: black;
+  }
+  
+  .mainmenu li:hover > svg {
+    fill: black;
+  }
+  
+  /*--------------------------Login and signiup----------------------------------------*/
+  .login {
+    background-color: transparent;
+    border: none;
+    margin-left: 15px;
+    font-size: 1.1rem;
+    padding: 5px 15px;
+    border-radius: 4px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .login:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+  }
+  
+  .login::before {
+    content: "";
+    height: 100%;
+    width: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: -10px;
+    top: 0;
+    z-index: 2;
+  }
+  
+  .signup {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 1.1rem;
+  }
+  
+  .signup:hover {
+    background-color: #0a66c210;
+    cursor: pointer;
+  }
+  
+  /*-------------------------------------------Mobile menu ------------------------------------*/
+  .mobile-menu-container svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  #menu-nav {
+    display: none;
+  }
+  
+  #menu-nav svg {
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+  .mobile-menu-container:hover #menu-nav {
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    display: grid;
+    align-content: center;
+    align-items: center;
+    box-shadow: 0 15px 15px 0 #00000020;
+    z-index: 9;
+  }
+  
+  .mobile-menu-list {
+    padding: 15px 0 15px 15px;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #ececec;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.5s;
+  }
+  
+  
+  /*=============================================RESPONSIVENESS ADJUSTMENTS=====================================================*/
+  @media screen and (max-width: 950px) {
+  
+    .main-nav-bar {
+      display: none;
+    }
+    .header {
+      padding: 40px 100px 0;
+    }
+    .mobile-menu-container {
+      display: flex;
+    }
+  }
+  
+  @media screen and (max-width: 703px) {
+    .header {
+      padding: 40px 40px 0;
+    }
+  }
+  
