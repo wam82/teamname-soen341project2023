@@ -1,6 +1,24 @@
 import "./Manage_Profile.css"
+import React from "react";
+import ReactDOM from "react-dom";
 
 export default function Manage_Profile() {
+  const uploadedImage = React.useRef(null);
+  const imageUploader = React.useRef(null);
+
+  const handleImageUpload = e => {
+    const [file] = e.target.files;
+    if (file) {
+      const reader = new FileReader();
+      const { current } = uploadedImage;
+      current.file = file;
+      reader.onload = e => {
+        current.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <div className="Manage_Profile">
     <div class="container-xl px-4 mt-4">
@@ -20,20 +38,29 @@ export default function Manage_Profile() {
           <div class="card mb-4 mb-xl-0">
             <div class="card-header">Profile Picture</div>
             <div class="card-body text-center">
-  
-              <img
-                class="img-account-profile rounded-circle mb-2"
-                src="https://i.pinimg.com/originals/ef/f7/2d/eff72de667ed34187de0ffde33b5856d.jpg"
-                alt=""
-              />
 
-              <div class="small font-italic text-muted mb-4">
-                JPG or PNG no larger than 5 MB
-              </div>
+            <div>
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleImageUpload}
+        ref={imageUploader}
+        style={{
+          display: "none"
+        }}
+      />
+      <div
+        onClick={() => imageUploader.current.click()}
+      >
+        <img class="img-account-profile rounded-circle mb-2" id="pfp"
+          ref={uploadedImage}
+        />
+      </div>
+      Click to upload Image
+    </div>
 
-              <button class="btn btn-primary" type="button">
-                Upload new image
-              </button>
+
+
             </div>
           </div>
         </div>
@@ -155,3 +182,4 @@ export default function Manage_Profile() {
     </div>
   )
 }
+

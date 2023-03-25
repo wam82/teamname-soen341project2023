@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import './sidebar.css'
 
 export default function Sidebar() {
@@ -10,7 +10,7 @@ export default function Sidebar() {
             <span className='sidebarText'>Student in Software Engineering</span>
         </div>
         <div className="sidebarItem">
-          <span className='sidebarEdit'>Edit Profile</span>
+          <span className='sidebarEdit'><Link to="./ManageProfile" style={{textDecoration:"none", color:"black"}}><a>Edit Profile</a></Link></span>
         </div>
     </div>
   )
