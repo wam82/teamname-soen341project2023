@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -15,15 +15,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
-      - name: Change to app directory
-        run: cd app
-        working-directory: ./app
       - name: Install dependencies
         run: npm install
-        working-directory: ./app
       - name: Start server
         run: npm start &
-        working-directory: ./app
       - name: Wait for server to start
         run: |
           timeout 30 bash -c "until curl --silent --fail http://localhost:3000; do printf '.'; sleep 1; done"
+
