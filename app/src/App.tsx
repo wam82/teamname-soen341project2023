@@ -17,7 +17,7 @@ import {Register} from "./Register/Register";
 import './Register/Register.css'
 
 function App() {
-  const user = true; // if user is login, this value is true, for now the value is always true
+  const user = false; // if user is login, this value is true, for now the value is always true
   return (
     <>
       <Header />
@@ -30,6 +30,10 @@ function App() {
         </Route>
         <Route path="/login">
           {user? <Home/> :<LoginPage/>}
+        </Route>
+        
+       <Route path="/register">
+          { <Register/> }
         </Route>
         <Route path="/write">
         {user? <Write/> :<LoginPage/>}
