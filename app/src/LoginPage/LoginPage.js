@@ -1,6 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react';
+import axios from 'axios';
 
 export default function LoginPage() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log('Sending username ${username} and password ${password');
+
+    try {
+      const response = await axios.post('/api/login', {
+        username: username,
+        password: password
+      });
+      console.log(response.data);
+      //TODO Handle successful login
+    } catch (error) {
+      console.error(error);
+      //TODO Handle login error
+    }
+  };
+
   return (
     <div class="login-page-container">
       <div class="login-function-container">
