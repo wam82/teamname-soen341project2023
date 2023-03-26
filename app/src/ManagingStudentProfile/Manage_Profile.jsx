@@ -2,18 +2,35 @@ import "./Manage_Profile.css"
 import React from "react";
 import {useState} from 'react';
 import ReactDOM from "react-dom";
+import axios from "axios";
+import { async } from "q";
 
 export default function Manage_Profile() {
 
   //postdata
   const [FirstName, setFirstName] = useState('');
   const [LastName, setLastName] = useState('');
-  const [org, setOrgName] = useState('');
-  const [Location, setLocation] = useState('');
   const [Email, setEmail] = useState('');
-  const [Phone, setPhoneNum] = useState('');
-  const [GPA, setGPA] = useState('');
+  const [Resume, setResume] = useState('');
+  const [Pfp, setPfp] = useState('');
+
   
+  const submit = async(e)=>{
+    e.preventDefault()
+    try{
+      alert("Profile updated!")
+      await axios.post("http://localhost:5000/api/user/update?",{
+        FirstName,
+        LastName,
+        Email,
+        Resume,
+        Pfp
+      })
+    }
+    catch{
+      console.log(e);
+    }
+  }
  
 
   //pfp changer
@@ -67,7 +84,7 @@ export default function Manage_Profile() {
         onClick={() => imageUploader.current.click()}
       >
         <img class="img-account-profile rounded-circle mb-2" id="pfp"
-          ref={uploadedImage}
+          ref={uploadedImage} onChange={(e)=> setPfp(e.target.value)}
         />
       </div>
       Click to upload Image
@@ -114,34 +131,7 @@ export default function Manage_Profile() {
                   </div>
                 </div>
 
-                <div class="row gx-3 mb-3">
-
-                  <div class="col-md-6">
-                    <label class="small mb-1" for="inputOrgName"
-                      >Organization name</label
-                    >
-                    <input
-                      class="form-control"
-                      id="inputOrgName"
-                      type="text"
-                      placeholder="Enter your organization name"
-                      onChange={(e)=> setOrgName(e.target.value)}
-                    />
-                  </div>
-
-                  <div class="col-md-6">
-                    <label class="small mb-1" for="inputLocation"
-                      >Location</label
-                    >
-                    <input
-                      class="form-control"
-                      id="inputLocation"
-                      type="text"
-                      placeholder="Enter your location"
-                      onChange={(e)=> setLocation(e.target.value)}
-                    />
-                  </div>
-                </div>
+            
 
                 <div class="mb-3">
                   <label class="small mb-1" for="inputEmailAddress"
@@ -156,42 +146,15 @@ export default function Manage_Profile() {
                   />
                 </div>
 
-                <div class="row gx-3 mb-3">
-
-                  <div class="col-md-6">
-                    <label class="small mb-1" for="inputPhone"
-                      >Phone number</label
-                    >
-                    <input
-                      class="form-control"
-                      id="inputPhone"
-                      type="tel"
-                      placeholder="Enter your phone number"
-                      onChange={(e)=> setPhoneNum(e.target.value)}
-                    />
-                  </div>
-
-                  <div class="col-md-6">
-                    <label class="small mb-1" for="inputGPA">GPA</label>
-                    <input
-                      class="form-control"
-                      id="inputGPA"
-                      type="text"
-                      name="GPA"
-                      placeholder="Enter your GPA"
-                      onChange={(e)=> setGPA(e.target.value)}
-                    />
-                  </div>
-                </div>
 
                 <div class="mb-3">
                   <label for="formFile" class="form-label"
                     >Upload your CV</label
                   >
-                  <input class="form-control" type="file" id="formFile" />
+                  <input class="form-control" type="file" id="formFile" onChange={(e)=> setResume(e.target.value)}/>
                 </div>
 
-                <button class="btn btn-primary" type="button" >
+                <button class="btn btn-primary" type="button" onClick={submit}>
                   Save changes
                 </button>
               </form>
