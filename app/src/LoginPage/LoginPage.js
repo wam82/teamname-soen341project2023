@@ -25,19 +25,17 @@ export default function LoginPage() {
   return (
     <div class="login-page-container">
       <div class="login-function-container">
-        <h1 class="login-useless-text">Welcome to your<br/>professional community</h1>
+        <h1 class="login-useless-text">Get Hired<br/>Jobs that matter</h1>
 
-        <input class="login-input-boxes" type="text" name="input"
-        id="username" value={username} onChange={(event) => setUsername(event.target.value)} 
-        placeholder="Email address"/>
+        
+          <input class="login-input-boxes" type="text" name="input" placeholder="Email or phone number"/>
+          <input class="login-input-boxes"type="password" name="pass" placeholder="Password"/>
+          <a href="#" class="forgot-password-anchor">Forgot password?</a>
+          <input class="login-input-boxes main-sign-in-button" type="button" value="Sign in"/>
 
-        <input class="login-input-boxes"type="password" name="pass" 
-        id="password" value={password} onChange={(event) => setPassword(event.target.value)}
-        placeholder="Password"/>
 
-        <a href="#" class="forgot-password-anchor">Forgot password?</a>
-        <button className="login-input-boxes main-sign-in-button" type="submit">Sign in</button>
       </div>
+      
       <div class="login-page-background">
       </div>
     </div>
