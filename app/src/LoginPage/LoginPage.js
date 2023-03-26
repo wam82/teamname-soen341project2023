@@ -1,42 +1,63 @@
 import React, { useState } from 'react';
+import './LoginPage.css';
+import api from '../api';
 import axios from 'axios';
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = async (event) => {
+  async function handleSubmit(event) {
+    console.log('Submitting form successful. Waiting for response');
     event.preventDefault();
-    console.log('Sending username ${username} and password ${password');
-
+  
     try {
-      const response = await axios.post('/api/login', {
-        username: username,
-        password: password
+      const response = await api.post('/api/login', {
+        username,
+        password,
       });
-      console.log(response.data);
-      //TODO Handle successful login
+  
+      //Save loggedIn boolean and userType in local storage
+      const loggedIn = response.data.loggedIn;
+      const userType = response.data.userType;
+      const email = response.data.email;
+      localStorage.setItem('loggedIn', loggedIn);
+      localStorage.setItem('userType', userType);
+      localStorage.setItem('email', email);
+      console.log('Login successful! loggedIn:', loggedIn, 'userType:', userType, 'email:' , email);
+      // Handle post-login actions
     } catch (error) {
-      console.error(error);
-      //TODO Handle login error
+      //Handle login error
+      console.error('Login error:', error);
     }
-  };
+  }
 
   return (
-    <div class="login-page-container">
-      <div class="login-function-container">
-        <h1 class="login-useless-text">Get Hired<br/>Jobs that matter</h1>
+    <div className="login-page-container">
+      <form className="login-function-container" onSubmit={handleSubmit}>
+        <h1 className="login-useless-text">Get Hired<br />Jobs that matter</h1>
 
-        
-          <input class="login-input-boxes" type="text" name="input" placeholder="Email or phone number"/>
-          <input class="login-input-boxes"type="password" name="pass" placeholder="Password"/>
-          <a href="#" class="forgot-password-anchor">Forgot password?</a>
-          <input class="login-input-boxes main-sign-in-button" type="button" value="Sign in"/>
+        <input
+          className="login-input-boxes"
+          type="text"
+          name="input"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          className="login-input-boxes"
+          type="password"
+          name="pass"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <a href="#" className="forgot-password-anchor">Forgot password?</a>
+        <button className="login-input-boxes main-sign-in-button" type="submit" value="Sign in">Sign in</button>
+      </form>
 
-
-      </div>
-      
-      <div class="login-page-background">
+      <div className="login-page-background">
       </div>
     </div>
   )
