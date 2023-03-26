@@ -49,7 +49,6 @@ async function run()
 {
 
     // GET SECTION
-
     app.get("/api/user", async (req, res) => {
 
         const query = req.query
@@ -119,7 +118,7 @@ async function run()
                 throw new Error('Invalid password');
               }
               const loggedIn = true;
-              res.status(200).json({ loggedIn, userType: user.user_type });
+              res.status(200).json({ loggedIn, userType: user.user_type, email: user.email });
             } catch (error) {
               console.error('Login error: Invalid username or password', error);
               res.status(400).json({ error: error.message });
@@ -203,4 +202,3 @@ function POST(url)
     Http.send();
 }
 
-POST("http://localhost:5000/api/login?username=loukafs&password=12345")
