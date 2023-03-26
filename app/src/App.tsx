@@ -21,24 +21,7 @@ function App() {
   return (
     <>
       <Header />
-      <Switch>
-        <Route exact path="/">
-        {user? <Home/> :<LoginPage/>}
-        </Route>
-        <Route path="/post/:postId">
-          <Single/>
-        </Route>
-        <Route path="/login">
-          {user? <Home/> :<LoginPage/>}
-        </Route>
-        
-       <Route path="/register">
-          { <Register/> }
-        </Route>
-        <Route path="/write">
-        {user? <Write/> :<LoginPage/>}
-        </Route>
-      </Switch>
+     <Register />
     </>
   );
 }

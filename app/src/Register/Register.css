@@ -1,5 +1,6 @@
 
-body{
+.register-page-container{
+     
   text-align: center;
   display: flex; 
   min-height: 100vh; 
@@ -13,9 +14,6 @@ body{
   align-items: center; 
   //text-align: left; 
 }
-
-
-
 
 label {
   text-align: left;

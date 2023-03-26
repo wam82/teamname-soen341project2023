@@ -11,28 +11,42 @@ export const Register = (props) => {
     }
 
     return (
+        <div className = "register-page-container">
+
+        
         <div className="auth-form-container">
-           <h2>Register</h2>
+
+           <h2 className="top">Register </h2>
+
         <form className="register-form" onSubmit={handleSubmit}>
 
         <label htmlFor="occupation" >Please choose your occupation</label>
 
             <select id="mySelect">
-            <option>Admin</option>
-            <option>Human Resource</option>
+            
+   
             <option>Student</option>
             <option>Employer</option>
             </select>
  
-            <label htmlFor="name" >Full  name</label>
-            <input value={name} name="name" onChange={(e) => setName(e.target.value)} id="name" placeholder="full Name" />
+            <label htmlFor="name" >User Name</label>
+            <input value={name} name="name" onChange={(e) => setName(e.target.value)} id="userName" placeholder="User Name" />
+            <label htmlFor="name" >First Name</label>
+            <input value={name} name="First Name" onChange={(e) => setName(e.target.value)} id="firstName" placeholder="First Name" />
+            <label htmlFor="name" >Last Name</label>
+            <input value={name} name="Last Name" onChange={(e) => setName(e.target.value)} id="lastName" placeholder="Last Name" />
             <label htmlFor="email">email</label>
             <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email" />
             <label htmlFor="password">password</label>
             <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-            <button type="submit">Log In</button>
+            <label htmlFor="password">Confirm password</label>
+            <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
+            <button type="submit">Sign Up</button>
         </form>
+      
          <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
+    </div>
+
     </div>
     )
 }
