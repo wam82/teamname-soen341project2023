@@ -1,46 +1,107 @@
 
+
 .register-page-container{
-     
-  text-align: center;
-  display: flex; 
-  min-height: 100vh; 
-  align-items: center; 
-  justify-content: center;
-    background-image: linear-gradient(79deg, #191970 , 	#556b2f	,	#f5f5dc 60%);
+ display: flex;
+  height: calc(100vh - 100px);
+  position: relative;
 }
+
 .auth-form-container, .register-form {
   display: flex;
   flex-direction: column;
   align-items: center; 
-  //text-align: left; 
 }
 
 label {
+    margin: 0.5rem 0;
   text-align: left;
   padding: 0.5rem 0;
+  color:black;
+   font-size: 1.2rem;
 }
 
 input {
-  margin: 0.5rem 0;
-  padding: 1rem;
+
+
   border: none;
   border-radius: 1px;
+
+  width: 350px;
+  height: 25px;
+  padding: 5px;
+  font-size: 1rem;
+  margin-top: 5px;
 }
 
 select {
-  margin: 0.5rem ;
-  padding: 1rem;
-  border: none;
+    border: none;
   border-radius: 1px;
+
+  width: 350px;
+  height: 26px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  margin-top: 5px;
 }
 
 button {
-     margin: 0.5rem 0;
+  margin: 0.5rem 0;
   border: none;
-  background-color: white;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10000px;
+  background-color: black;
+  border: none;
+  color: whitesmoke;
   cursor: pointer;
-  color: #556b2f;
 }
 
+.error-message {
+  color: blue;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.register-page-background {
+  background-image: url("https://svgshare.com/i/qjG.svg");
+  height: calc(100vh - 100px);
+  width: 65vw;
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  z-index: -1;
+  position: absolute;
+  right: 0;
+}
+
+.register-useless-text {
+  font-size: 3.2rem;
+  font-weight: 100;
+  margin-bottom: 25px;
+  color: #8f5849;
+}
+@media screen and (max-width: 950px) {
+  .register-page-background {
+    display: none;
+  }
+  .register-function-container {
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+  }
+  .register-useless-text {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 703px) {
+  .register-useless-text {
+    font-size: 2rem;
+  }
+  .register-function-container {
+    margin: auto 0;
+  }
+  .register-input-boxes {
+    width: 55vw;
+  }
+}
