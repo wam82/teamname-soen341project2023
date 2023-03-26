@@ -1,8 +1,22 @@
 import "./Manage_Profile.css"
 import React from "react";
+import {useState} from 'react';
 import ReactDOM from "react-dom";
 
 export default function Manage_Profile() {
+
+  //postdata
+  const [FirstName, setFirstName] = useState('');
+  const [LastName, setLastName] = useState('');
+  const [org, setOrgName] = useState('');
+  const [Location, setLocation] = useState('');
+  const [Email, setEmail] = useState('');
+  const [Phone, setPhoneNum] = useState('');
+  const [GPA, setGPA] = useState('');
+  
+ 
+
+  //pfp changer
   const uploadedImage = React.useRef(null);
   const imageUploader = React.useRef(null);
 
@@ -69,7 +83,7 @@ export default function Manage_Profile() {
           <div class="card mb-4">
             <div class="card-header">Account Details</div>
             <div class="card-body">
-              <form>
+              <form action="POST">
 
                 <div class="row gx-3 mb-3">
 
@@ -82,6 +96,7 @@ export default function Manage_Profile() {
                       id="inputFirstName"
                       type="text"
                       placeholder="Enter your first name"
+                      onChange={(e)=> setFirstName(e.target.value)}
                     />
                   </div>
 
@@ -94,6 +109,7 @@ export default function Manage_Profile() {
                       id="inputLastName"
                       type="text"
                       placeholder="Enter your last name"
+                      onChange={(e)=> setLastName(e.target.value)}
                     />
                   </div>
                 </div>
@@ -109,6 +125,7 @@ export default function Manage_Profile() {
                       id="inputOrgName"
                       type="text"
                       placeholder="Enter your organization name"
+                      onChange={(e)=> setOrgName(e.target.value)}
                     />
                   </div>
 
@@ -121,6 +138,7 @@ export default function Manage_Profile() {
                       id="inputLocation"
                       type="text"
                       placeholder="Enter your location"
+                      onChange={(e)=> setLocation(e.target.value)}
                     />
                   </div>
                 </div>
@@ -134,6 +152,7 @@ export default function Manage_Profile() {
                     id="inputEmailAddress"
                     type="email"
                     placeholder="Enter your email address"
+                    onChange={(e)=> setEmail(e.target.value)}
                   />
                 </div>
 
@@ -148,6 +167,7 @@ export default function Manage_Profile() {
                       id="inputPhone"
                       type="tel"
                       placeholder="Enter your phone number"
+                      onChange={(e)=> setPhoneNum(e.target.value)}
                     />
                   </div>
 
@@ -159,6 +179,7 @@ export default function Manage_Profile() {
                       type="text"
                       name="GPA"
                       placeholder="Enter your GPA"
+                      onChange={(e)=> setGPA(e.target.value)}
                     />
                   </div>
                 </div>
@@ -170,7 +191,7 @@ export default function Manage_Profile() {
                   <input class="form-control" type="file" id="formFile" />
                 </div>
 
-                <button class="btn btn-primary" type="button">
+                <button class="btn btn-primary" type="button" >
                   Save changes
                 </button>
               </form>
