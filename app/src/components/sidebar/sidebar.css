@@ -1,0 +1,36 @@
+.sidebar{
+    flex: 3;
+    margin: 20px;
+    display: flex;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgray;
+    height: 50%;
+}
+.sidebarTitle{
+    cursor: pointer;
+    margin: 10px;
+    padding: 5px;
+    font-size: 25px;
+
+}
+
+.sidebarItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebarItem> img{
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 100px;
+    width: 50%;
+    height: 100%;
+}
+
+.sidebarEdit{
+    margin-top: 10px;
+}
