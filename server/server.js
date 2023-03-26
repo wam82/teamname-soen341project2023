@@ -128,7 +128,6 @@ async function run()
         app.post("/api/post/insert", async (req, res) => {
 
             const query = req.query
-            var response_in_json = {} 
     
             data = {
                 title:       query["title"],
@@ -146,19 +145,34 @@ async function run()
             res.json({res: (error===null)})    
         })
 
-        app.get("/api/post/update", async (req, res) => {
+        app.post("/api/post/update", async (req, res) => {
             
             const query = req.query
-            var response_in_json = {}
 
             let id = query["id"]
             delete query.id
 
-            const { error } = await database.from('postings')
-                                            .update(query)
-                                            .eq('id', id)
+            const { error } = await database
+            .from('postings')
+            .update(query)
+            .eq('id', id)
 
             res.json({res: (error===null)})
+        })
+
+        app.get("/api/user/update", async (req, res) => {
+
+            const query = req.query
+            
+            let id = query["id"]
+            delete query.id
+            
+            const { error } = await database
+            .from('users')
+            .update(query)
+            .eq('id', id)
+
+            res.json({res : (error===null)})
         })
     
         app.post("/api/user/insert", async (req, res) => {
