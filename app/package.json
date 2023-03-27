@@ -21,6 +21,7 @@
     "react-dom": "^18.2.0",
     "react-modules": "^1.0.8",
     "react-router-dom": "^5.2.0",
+    "react-script": "^2.0.5",
     "react-scripts": "5.0.1",
     "sequelize": "^6.29.0",
     "typescript": "^4.9.5",

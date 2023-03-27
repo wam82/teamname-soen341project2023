@@ -12,25 +12,16 @@ import Home from "./home/home";
 import Single from './components/single/Single';
 import Write from './components/Write/Write';
 
+
+import {Register} from "./Register/Register";
+import './Register/Register.css'
+
 function App() {
-  const user = true; // if user is login, this value is true, for now the value is always true
+  const user = false; // if user is login, this value is true, for now the value is always true
   return (
     <>
       <Header />
-      <Switch>
-        <Route exact path="/">
-        {user? <Home/> :<LoginPage/>}
-        </Route>
-        <Route path="/post/:postId">
-          <Single/>
-        </Route>
-        <Route path="/login">
-          {user? <Home/> :<LoginPage/>}
-        </Route>
-        <Route path="/write">
-        {user? <Write/> :<LoginPage/>}
-        </Route>
-      </Switch>
+     <Register />
     </>
   );
 }

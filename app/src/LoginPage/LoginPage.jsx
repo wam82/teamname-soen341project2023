@@ -59,6 +59,7 @@ export default function LoginPage() {
 
       <div className="login-page-background">
       </div>
+       
     </div>
   )
 }
