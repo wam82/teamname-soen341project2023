@@ -202,6 +202,28 @@ async function run()
     
         })
 
+        app.post("/api/post/delete", async (req, res) => {
+
+            const query = req.query
+
+            const { error } = await database
+            .from("postings").delete().match(req.query)
+
+            res.json({res: (error === null)})
+
+        })
+
+        app.post("/api/user/delete", async (req, res) => {
+
+            const query = req.query
+
+            const { error } = await database
+            .from("users").delete().match(req.query)
+
+            res.json({res: (error === null)})
+
+        })
+
         app.listen(5000, () => {console.log("Console started on port 5000")})
 
 
