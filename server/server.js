@@ -248,6 +248,21 @@ async function run()
             res.json({res: (error===null)})  
         })
 
+
+        app.post("/api/applications/update", async (req, res) => {
+
+            const query = req.query
+
+            let id = query["application_id"]
+            delete query["application_id"]
+
+            const { error } = await database.from('applications')
+            .update(query)
+            .eq("id", id)
+
+            res.json({res: (error===null)})  
+        })
+
         app.listen(5000, () => {console.log("Console started on port 5000")})
 
 
