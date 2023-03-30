@@ -91,11 +91,6 @@ async function run()
     })
 
     // POST SECTION
-
-    app.post("/api", async (req, res) =>{
-        const query = req.query
-        res.json(query)
-    })
         
         // TODO : add api route for app.get("/api/insert", =>)
         //        and app.get("/api/update", =>)
@@ -222,6 +217,35 @@ async function run()
 
             res.json({res: (error === null)})
 
+        })
+
+        app.get("/api/applications", async (req, res) => {
+
+            const query = req.query
+            var response_in_json = {}
+
+            if (Object.keys(query).length !== 0)
+            {
+                const { data, error } = await database.from("applications").select("*").match(query)
+                response_in_json = data
+
+            } else  {
+                const { data, error } = await database.from("applications").select("*")
+                response_in_json = data
+            }
+
+            res.json({res: response_in_json})
+        })
+
+
+        app.post("/api/applications/insert", async (req, res) => {
+
+            const query = req.query
+
+            const { error } = await database.from('applications').insert(query)
+    
+    
+            res.json({res: (error===null)})  
         })
 
         app.listen(5000, () => {console.log("Console started on port 5000")})
