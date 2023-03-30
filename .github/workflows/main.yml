@@ -15,9 +15,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
-      - name: Change to app directory
-        run: cd app
-        working-directory: ./app
       - name: Install dependencies
         run: npm install
         working-directory: ./app
