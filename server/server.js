@@ -155,7 +155,7 @@ async function run()
             res.json({res: (error===null)})
         })
 
-        app.get("/api/user/update", async (req, res) => {
+        app.post("/api/user/update", async (req, res) => {
 
             const query = req.query
             
@@ -186,7 +186,8 @@ async function run()
                 username:   query["username"],
                 image:      query["image"]
             }
-    
+
+            console.log("sending")
     
             console.log("inserting user")
             console.log(data)
