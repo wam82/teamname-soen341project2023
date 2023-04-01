@@ -7,7 +7,7 @@ import './components/Header/Header.css';
 import LoginPage from "./LoginPage/LoginPage";
 import './LoginPage/LoginPage.css';
 
-import Posts from "../src/components/posts/Posts"
+import Posts from "./components/post/Post"
 import Home from "./home/home";
 import Single from './components/single/Single';
 import Write from './components/Write/Write';
