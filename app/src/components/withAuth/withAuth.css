@@ -1,0 +1,35 @@
+.EverythingContainer {
+  height: 100%;
+}
+
+.ComponentsContainer {
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 70px);
+  padding-top: 70px;
+  padding-left: 15%;
+}
+
+.HeaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+}
+
+.SideBarContainerInAuth {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 15%;
+  min-width: 230px;
+  height: calc(100vh - 70px);
+  z-index: 999;
+}
+
+
+.WrappedComponentContainer {
+  flex: 1;
+}
