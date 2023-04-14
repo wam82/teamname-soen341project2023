@@ -1,0 +1,186 @@
+/*General (DONE)*/
+/*Did*/
+body {
+  background-color: whitesmoke;
+  color: #2B2B2B;
+}
+
+/*Did*/
+body.dark-mode {
+  background-color: #444444;
+  color: whitesmoke;
+}
+
+/*Did*/
+li:nth-child(odd){
+  background-color: #D8D9CF;
+}
+
+/*Did*/
+li.dark-mode:nth-child(odd) {
+  background-color: #4d4d4d;
+  color: whitesmoke;
+}
+
+/*Did*/
+li:nth-child(even){
+  background-color: #FAF7F0;
+}
+
+/*Did*/
+li.dark-mode:nth-child(even) {
+  background-color: #3F3F3F;
+  color: whitesmoke;
+}
+
+/*Did*/
+p {
+  color: black;
+}
+
+/*Did*/
+p.dark-mode {
+  color: whitesmoke;
+}
+
+/*Did*/
+h1.dark-mode, h2.dark-mode, h3.dark-mode, h4.dark-mode, h5.dark-mode, h6.dark-mode {
+  color: whitesmoke;
+}
+
+
+/*ADMIN.css (DONE)*/
+/*Did*/
+.TableContainer th:first-child,
+.TableContainer td:first-child {
+  background-color: #D8D9CF;
+}
+
+/*Did*/
+.TableContainer th:nth-child(2),
+.TableContainer td:nth-child(2) {
+  background-color: #FAF7F0;
+}
+
+/*Did*/
+.TableContainer th:nth-child(3),
+.TableContainer td:nth-child(3) {
+  background-color: #D8D9CF;
+}
+
+/*Did*/
+.TableContainer th:last-child,
+.TableContainer td:last-child {
+  background-color: #FAF7F0;
+}
+
+/*Did*/
+.TableContainer th:first-child.dark-mode,
+.TableContainer td:first-child.dark-mode {
+background-color: #2C2C2C;
+color: whitesmoke;
+}
+
+/*Did*/
+.TableContainer th:nth-child(2).dark-mode,
+.TableContainer td:nth-child(2).dark-mode {
+background-color: #3F3F3F;
+color: whitesmoke;
+}
+
+/*Did*/
+.TableContainer th:nth-child(3).dark-mode,
+.TableContainer td:nth-child(3).dark-mode {
+background-color: #2C2C2C;
+color: whitesmoke;
+}
+
+/*Did*/
+.TableContainer th:last-child.dark-mode,
+.TableContainer td:last-child.dark-mode {
+background-color: #3F3F3F;
+color: whitesmoke;
+}
+
+/*Did*/
+.ButtonStyleLinks.dark-mode {
+  color: whitesmoke;
+}
+
+
+/*CommonPages.css (DONE)*/
+/*Did*/
+.EditProfileContainer {
+  background-color: #D8D9CF;
+}
+/*Did*/
+.EditProfileContainer2 {
+  background-color: #D8D9CF;
+}
+/*Did*/
+.SpecificUserContainer {
+  background-color: #D8D9CF;
+}
+/*Did*/
+.EditProfileImageContainer {
+  background-color: #D8D9CF;
+}
+/*Did*/
+.EditProfileContainer.dark-mode {
+  background-color: #3F3F3F;
+}
+/*Did*/
+.EditProfileContainer2.dark-mode {
+  background-color: #3F3F3F;
+}
+/*Did*/
+.SpecificUserContainer.dark-mode {
+  background-color: #3F3F3F;
+}
+/*Did*/
+.EditProfileImageContainer.dark-mode {
+  background-color: #3F3F3F;
+}
+
+/*Headhunter.css (DONE)*/
+
+/*Did*/
+.JobListingWordContainer {
+  background-color: #F8EDE3;
+}
+
+/*Did*/
+.JobListingWordContainer.dark-mode {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/*Did*/
+.WholeJobContainer {
+  background-color: #D8D9CF;
+}
+
+/*Did*/
+.WholeJobContainer.dark-mode {
+  background-color: #2C2C2C;
+}
+
+/*Did*/
+.NotificationContainer {
+  background-color: #F6F1F1;
+}
+
+/*Did*/
+.NotificationContainer.dark-mode {
+  background-color: #2C2C2C;
+  color: white;
+}
+
+
+/*Rests that I forgot*/
+.EditJobContainer {
+  background-color: #D8D9CF;
+}
+
+.EditJobContainer.dark-mode {
+  background-color: #3F3F3F;
+}
