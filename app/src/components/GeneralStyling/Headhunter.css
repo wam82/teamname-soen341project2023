@@ -1,0 +1,29 @@
+/*components/Home/Headhunter/HeadhunterHome.js*/
+
+.HeadhunterJobsContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  height: Auto;
+  background-color: #FAF7F0;
+}
+
+.HeadhunterHomeButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.FullApplicantContainerHeadhunter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background-color: #D8D9CF;
+}
+
+/*I gave up on organisation*/
+
+/*Student.css*/
