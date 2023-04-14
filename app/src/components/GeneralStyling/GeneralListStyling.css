@@ -1,0 +1,14 @@
+ul {
+  list-style: none;
+}
+
+li:nth-child(odd){
+  background-color: #D8D9CF;
+  border-bottom: 0.5px solid grey;
+}
+li:nth-child(even){
+  background-color: #FAF7F0;
+  border-bottom: 0.5px solid grey;
+}
+
+

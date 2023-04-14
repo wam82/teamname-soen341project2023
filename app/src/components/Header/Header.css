@@ -1,0 +1,125 @@
+/*========================GENERAL SETTINGS==============================================*/
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.1s;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  background-color: #3C4048;
+  height: 100%;
+}
+
+/*===========================================STRUCTURE============================================*/
+
+/*-------------------------Logo-------------------------------------*/
+.logo {
+  display: flex;
+  align-items: center;
+  color: whitesmoke;
+}
+
+
+/*-------------------Login and signup---------------------------------*/
+.nav-login-signup {
+  display: flex;
+  align-items: center;
+}
+
+/*-------------------Responsive menu bar---------------------------------*/
+.mobile-menu-container {
+  display: none;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+/*===========================================STYLING============================================*/
+/*-------------------------Logo image--------------------------------*/
+.logo-image {
+  height: 25px;
+  fill: whitesmoke;
+  margin-left: 2px;
+}
+
+/*--------------------------Login and signiup----------------------------------------*/
+.signup {
+  background-color: transparent;
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 1.1rem;
+}
+
+.signup:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+/*-------------------------------------------Mobile menu ------------------------------------*/
+.mobile-menu-container svg {
+  width: 30px;
+  height: 30px;
+}
+
+#menu-nav {
+  display: none;
+}
+
+#menu-nav svg {
+  height: 20px;
+  margin-right: 8px;
+}
+
+.mobile-menu-container:hover #menu-nav {
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  display: grid;
+  align-content: center;
+  align-items: center;
+  box-shadow: 0 15px 15px 0 #00000020;
+  z-index: 9;
+}
+
+.mobile-menu-list {
+  padding: 15px 0 15px 15px;
+  margin: 0;
+  text-decoration: none;
+  color: whitesmoke;
+  border-bottom: 1px solid #ececec;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+
+/*=============================================RESPONSIVENESS ADJUSTMENTS=====================================================*/
+@media screen and (max-width: 950px) {
+
+  .main-nav-bar {
+    display: none;
+  }
+  .header {
+    padding: 40px 100px 0;
+  }
+  .mobile-menu-container {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 703px) {
+  .header {
+    padding: 40px 40px 0;
+  }
+}
