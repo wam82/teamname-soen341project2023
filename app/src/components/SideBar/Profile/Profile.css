@@ -1,0 +1,53 @@
+.ProfileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.ProfilePicture {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid darkgrey;
+}
+
+.ProfilePicture:hover {
+  opacity: 60%;
+}
+
+/*LINKS*/
+.ProfileLinks {
+  text-decoration: none;
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+}
+
+/* style links to be black */
+.ProfileLinks :link,
+.ProfileLinks :visited {
+  color: whitesmoke;
+}
+
+/*BUTTONS*/
+.ProfileButtons {
+  background-color: #2B2B2B;
+  border: 1px solid #2B2B2B;
+  border-radius: 5px;
+  color: whitesmoke;
+  width: 95%;
+  height: 50px;
+  font-size: 18px;
+}
+
+.ProfileButtons:hover {
+  background-color: #444343;
+  color: whitesmoke;
+  cursor: pointer;
+}
+

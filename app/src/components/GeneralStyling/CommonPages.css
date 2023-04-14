@@ -1,0 +1,176 @@
+/*Components/SideBar/Profile/EditProfile*/
+
+.EditProfileContainer {
+  background-color: #D8D9CF;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+}
+
+.EditProfileContainer2 {
+  background-color: #D8D9CF;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.EditProfileInputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.EditProfileLabels {
+  font-size: 18px;
+}
+
+.EditProfileInputBlock{
+  width: 90%;
+  align-items: flex-end;
+  height: 30px;
+  border:1px solid grey;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.EditSuccessMessage {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.ResumeButton {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+/*components/SideBar/Profile/StudentSpecific/EditProfileAddResume*/
+
+.EditJobContainer {
+  background-color: #D8D9CF;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: auto;
+}
+
+.textAreaInputs {
+  height: 120px;
+}
+
+/*components/SideBar/People/People.js*/
+
+.SinglePersonContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;  
+}
+
+.PeopleProfilePicture {
+  border-radius: 50%;
+}
+
+.NameAndTypeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.UserType {
+  background-color: #408E91;
+  color: whitesmoke;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+
+}
+
+/*components/SideBar/People/SpecificUser.js*/
+
+.UserType2 {
+ font-size: 25px;
+ background-color: #408E91;
+ color: whitesmoke;
+ padding: 5px;
+ border-radius: 5px;
+}
+
+.SpecificUserContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #D8D9CF;
+}
+
+.SpecificProfilePicture {
+  border-radius: 50%;
+  border: 5px solid darkgrey;
+}
+
+.ProfileResumeButton {
+  margin-top: 10px;
+}
+
+.ResumeContainer {
+  padding: 10px;
+}
+
+/*components/SideBar/Profile/EditProfileAddProfileImage.js*/
+.ProfilePicPageContainer {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProfilePictureEditContainer{
+  border-radius: 50%;
+  border: 5px solid darkgrey;
+}
+
+.ProfilePicButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.EditProfileImageContainer {
+  background-color: #D8D9CF;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+
+
+
+
+
+
+

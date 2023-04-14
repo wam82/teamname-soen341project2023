@@ -1,0 +1,66 @@
+
+.SideBarContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #2B2B2B;
+  align-items: center;
+}
+
+
+.ProfileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+
+.GeneralStuffContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+/* BUTTONS                      */
+
+.SideBarButtons {
+  background-color: #2B2B2B;
+  border: 1px solid #2B2B2B;
+  border-radius: 5px;
+  color: whitesmoke;
+  width: 95%;
+  height: 50px;
+  font-size: 18px;
+}
+
+.SideBarButtons:hover {
+  background-color: #444343;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+/* LINKS                            */
+/* remove the underline from all links */
+.SideBarLinks {
+  text-decoration: none;
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+}
+
+/* style links to be black */
+.SideBarLinks :link,
+.SideBarLinks :visited {
+  color: whitesmoke;
+}
+
+
