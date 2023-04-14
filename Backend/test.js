@@ -8,7 +8,7 @@ async function tests() {
     .setChromeOptions(new chrome.Options().headless())
     .build();
 
-  const waitTime = 1000;
+  const waitTime = 3000;
   
   // Test 1: Login to a student account
   console.log('Starting Test 1');
