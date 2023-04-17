@@ -53,7 +53,7 @@ app.post('/register', async (req, res) => {
       return;
     }
     // Create new user
-    const { data: newUser, error: createUserError } = await supabase.from('users').insert({
+    const { error: createUserError } = await supabase.from('users').insert({
       username,
       email,
       password,
@@ -108,7 +108,7 @@ app.get('/jobs/:id', async (req, res) => {
 app.post('/job-applications', async (req, res) => {
   const { jobId, userId } = req.body;
   try {
-    const { data, error } = await supabase.from('job_applications').insert({ jobId, userId, isApplied: true, isAccepted: null });
+    const {error } = await supabase.from('job_applications').insert({ jobId, userId, isApplied: true, isAccepted: null });
     if (error) {
       throw error;
     }
@@ -123,7 +123,7 @@ app.post('/job-applications', async (req, res) => {
 app.delete('/job-applications/:id/:userId', async (req, res) => {
   const { id, userId } = req.params;
   try {
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('job_applications').delete().eq('jobId', id).eq('userId', userId);
 
     if (error) {
@@ -174,7 +174,7 @@ app.put('/jobs/:id', async (req, res) => {
   const jobId = req.params.id;
   const { title, description, employer, company, minimum_degree } = req.body;
   try {
-    const { data, error } = await supabase
+    const {error } = await supabase
       .from('jobs').update({ title, description, employer, company, minimum_degree }).eq('id', jobId);
 
     if (error) {
@@ -191,14 +191,14 @@ app.put('/jobs/:id', async (req, res) => {
 app.delete('/jobs/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('jobs').delete().eq('id', id);
 
     if (error) {
       throw error;
     }
     // Delete job applications for the deleted job posting
-    const { data: jobAppsData, error: jobAppsError } = await supabase
+    const {error: jobAppsError } = await supabase
       .from('job_applications').delete().eq('jobId', id);
     if (jobAppsError) {
       throw jobAppsError;
@@ -217,7 +217,7 @@ app.post('/create-job', async (req, res) => {
   const { title, description, employer, company, minimum_degree } = req.body;
   const employerId = req.body.employerId || null;
   try {
-    const { data, error } = await supabase
+    const {error } = await supabase
       .from('jobs').insert({ title, description, employer, company, minimum_degree, employerId }).single();
 
     if (error) {
@@ -269,7 +269,7 @@ app.put('/applications/:userId/:jobId', async (req, res) => {
   try {
     const { userId, jobId } = req.params;
     const { isAccepted, isApplied } = req.body;
-    const { data, error } = await supabase
+    const {error } = await supabase
       .from('job_applications').update({ isAccepted, isApplied }).eq('userId', userId).eq('jobId', jobId);
     if (error) throw error;
     res.send(updatedData);
@@ -319,7 +319,7 @@ app.put('/job-applications/:id/:userId', async (req, res) => {
   const { studentDismiss } = req.body;
 
   try {
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('job_applications').update({ studentDismiss }).eq('jobId', id).eq('userId', userId);
 
     if (error) {
@@ -383,7 +383,7 @@ app.get('/people', async (req, res) => {
 app.post('/studentResume/:userId', async (req, res) => {
   try {
     const { userId } = req.params;
-    const { degree, summary, education, skills } = req.body;
+    const { degree, summary, experience, skills } = req.body;
 
     //fetch data existing
     const { data: existingRecord, error: selectError } = await supabase
@@ -528,7 +528,7 @@ app.delete('/delete-employer/:id', async (req, res) => {
     }
     const { error: jobAppError } = await supabase.from('job_applications').delete().eq('jobId', id);
     if (jobPostError) {
-      throw jobPostError;
+      throw jobAppError;
     }
     res.send({ message: 'Employer deleted successfully' });
   } catch (error) {
@@ -635,7 +635,7 @@ app.delete('/delete-job-application/:id', async (req, res) => {
 app.put('/headhunter-recommend/:userId/:jobId', async (req, res) => {
   const { userId, jobId } = req.params;
   try {
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('job_applications').update({ isRecommended: true }).eq('userId', userId).eq('jobId', jobId).single();
     if (error) {
       throw error;
@@ -651,7 +651,7 @@ app.put('/headhunter-recommend/:userId/:jobId', async (req, res) => {
 app.put('/headhunter-cancel-recommend/:userId/:jobId', async (req, res) => {
   const { userId, jobId } = req.params;
   try {
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('job_applications').update({ isRecommended: null }).eq('userId', userId).eq('jobId', jobId).single();
     if (error) {
       throw error;
@@ -673,7 +673,7 @@ app.post('/upload-image/:userId', upload.single('image'), async (req, res) => {
     const { userId } = req.params;
     const { originalname, buffer } = req.file;
     // Upload the file to the bucket using Supabase Storage SDK
-    const { data, error } = await supabase.storage
+    const { error } = await supabase.storage
       .from('images')
       .upload(`images/${userId}/${originalname}`, buffer);
 
